@@ -13,7 +13,7 @@ function RoutesApp() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/netprime" element={<Home />} />
         <Route path="/filme/:id" element={<Movie />} />
         <Route path="/favoritos" element={<Favorites />} />
 

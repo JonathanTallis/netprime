@@ -4,7 +4,7 @@ import "./header.css";
 function Header() {
   return (
     <header>
-      <Link className="logo" to="/">
+      <Link className="logo" to="/netprime">
         <img src="logo.png" alt="NetPrime" />
       </Link>
       <Link className="favoritos" to="/favoritos">
