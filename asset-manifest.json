@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/netprime/static/css/main.1c8ed2e1.css",
+    "main.js": "/netprime/static/js/main.1864622e.js",
+    "index.html": "/netprime/index.html",
+    "main.1c8ed2e1.css.map": "/netprime/static/css/main.1c8ed2e1.css.map",
+    "main.1864622e.js.map": "/netprime/static/js/main.1864622e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c8ed2e1.css",
+    "static/js/main.1864622e.js"
+  ]
+}
