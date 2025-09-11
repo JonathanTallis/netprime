@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Projeto NetPrime – Catálogo de Filmes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi desenvolvido como prática do **módulo 13 do curso FullStack PRO**.  
+Recriei e personalizei a aplicação para praticar os conceitos aprendidos em **React.js**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Deploy
 
-### `npm start`
+[Clique aqui para acessar a aplicação](https://jonathantallis.github.io/netprime/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+- React.js
+- React Router DOM
+- React Toastify
+- HTML5 / CSS3
+- Axios (consumo de API)
+- API The Movie Database (TMDB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Listagem de filmes em cartaz
+- Visualização de detalhes de cada filme
+- Adicionar e remover filmes favoritos (armazenados no navegador/localStorage)
+- Tratamento de rotas inexistentes (página de erro personalizada)
+- Layout adaptado e responsivo com CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Preview
 
-### `npm run eject`
+![Preview do NetPrime](https://github.com/JonathanTallis/netprime/blob/main/public/preview.gif?raw=true)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Aprendizados
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Durante o desenvolvimento deste projeto, pratiquei:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Criação de rotas com **React Router DOM**
+- Consumo de API externa com **Axios**
+- Manipulação de estados e props no React
+- Armazenamento local de dados no navegador
+- Personalização de layout com CSS
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Autor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Jonathan Tallis Pereira de Fonte**  
+🔗 [LinkedIn](https://www.linkedin.com/in/jonathantallis) | [GitHub](https://github.com/JonathanTallis)
