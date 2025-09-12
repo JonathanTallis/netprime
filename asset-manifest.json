@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/netprime/static/css/main.1c8ed2e1.css",
-    "main.js": "/netprime/static/js/main.9e6458ce.js",
+    "main.js": "/netprime/static/js/main.19d4ed94.js",
     "index.html": "/netprime/index.html",
     "main.1c8ed2e1.css.map": "/netprime/static/css/main.1c8ed2e1.css.map",
-    "main.9e6458ce.js.map": "/netprime/static/js/main.9e6458ce.js.map"
+    "main.19d4ed94.js.map": "/netprime/static/js/main.19d4ed94.js.map"
   },
   "entrypoints": [
     "static/css/main.1c8ed2e1.css",
-    "static/js/main.9e6458ce.js"
+    "static/js/main.19d4ed94.js"
   ]
 }
