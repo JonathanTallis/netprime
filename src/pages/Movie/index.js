@@ -27,7 +27,7 @@ function Movie() {
         })
         .catch(() => {
           console.log("FILME NÃO ENCONTRADO!");
-          navigate("/", { replace: true });
+          navigate("/netprime", { replace: true });
         });
     }
 
