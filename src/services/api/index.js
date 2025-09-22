@@ -5,5 +5,3 @@ const api = axios.create({
 });
 
 export default api;
-
-//API Key: fe693a701206cd78a2ef5e226304aebe
