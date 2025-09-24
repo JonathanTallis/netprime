@@ -41,7 +41,6 @@ function Login() {
       setEmail("");
       setPassword("");
 
-      toast.success("Login realizado com sucesso!");
       navigate("/netprime");
     } catch (error) {
       if (error.code === "auth/user-not-found") {

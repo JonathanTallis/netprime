@@ -1,11 +1,14 @@
 import RoutesApp from "./Routes";
+import AuthProvider from "./contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="app">
-      <ToastContainer autoClose={3000} />
-      <RoutesApp />
+      <AuthProvider>
+        <ToastContainer autoClose={3000} />
+        <RoutesApp />
+      </AuthProvider>
     </div>
   );
 }

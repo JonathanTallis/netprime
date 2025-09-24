@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { auth } from "../../services/firebase/connection";
+import { auth, db } from "../../services/firebase/connection";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import "./register.css";
 
 function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,7 +17,12 @@ function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (email === "" || password === "" || confirmPassword === "") {
+    if (
+      name === "" ||
+      email === "" ||
+      password === "" ||
+      confirmPassword === ""
+    ) {
       toast.error("Por favor, preencha todos os campos!");
       return;
     }
@@ -37,6 +44,7 @@ function Register() {
     }
 
     setLoading(true);
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -45,14 +53,21 @@ function Register() {
       );
       const user = userCredential.user;
 
+      await setDoc(doc(db, "users", user.uid), {
+        name: name,
+        email: user.email,
+        favorites: [],
+      });
+
       //remover antes do deploy
       console.log(user);
 
+      setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
 
-      toast.success("Cadastro realizado com sucesso!");
+      toast.success(`Seja bem vindo ${name}!`);
       navigate("/netprime");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -81,6 +96,15 @@ function Register() {
 
       <div className="register-data">
         <form onSubmit={handleSubmit}>
+          <label>Nome</label>
+          <input
+            type="text"
+            placeholder="Qual seu nome?"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+
           <label>E-mail</label>
           <input
             type="email"
