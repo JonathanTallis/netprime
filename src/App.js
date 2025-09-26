@@ -1,4 +1,4 @@
-import RoutesApp from "./Routes";
+import RoutesApp from "./routes/Routes";
 import AuthProvider from "./contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
 

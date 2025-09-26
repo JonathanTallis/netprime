@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+
 //Layouts
-import DefaultLayout from "./components/Layouts/DefaultLayout";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
 
 //Pages
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Home from "./pages/Home";
-import Movie from "./pages/Movie";
-import Favorites from "./pages/Favorites/index";
-import Error from "./pages/Error";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Home from "../pages/Home";
+import Movie from "../pages/Movie";
+import Favorites from "../pages/Favorites/index";
+import Error from "../pages/Error";
 
 function RoutesApp() {
   return (
@@ -22,7 +24,14 @@ function RoutesApp() {
         <Route element={<DefaultLayout />}>
           <Route path="/netprime" element={<Home />} />
           <Route path="/filme/:id" element={<Movie />} />
-          <Route path="/favoritos" element={<Favorites />} />
+          <Route
+            path="/favoritos"
+            element={
+              <PrivateRoute>
+                <Favorites />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
