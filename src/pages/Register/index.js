@@ -58,10 +58,6 @@ function Register() {
         email: user.email,
         favorites: [],
       });
-
-      //remover antes do deploy
-      console.log(user);
-
       setName("");
       setEmail("");
       setPassword("");

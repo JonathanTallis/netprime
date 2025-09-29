@@ -7,7 +7,7 @@ function Header() {
   const { signed, loadingAuth, user, Logout } = useContext(AuthContext);
 
   if (loadingAuth) {
-    return <div></div>;
+    return <div>Carregando...</div>;
   }
 
   return (
@@ -22,7 +22,7 @@ function Header() {
             Meus Filmes
           </Link>
 
-          <span className="user-email">{`Olá! ${user.name}`}</span>
+          <span className="user-name">{`Olá! ${user.name}`}</span>
 
           <button className="logout-btn" onClick={() => Logout()}>
             Sair
@@ -30,6 +30,9 @@ function Header() {
         </div>
       ) : (
         <div className="header-links">
+          <Link className="login-btn" to="/login">
+            Entrar
+          </Link>
           <Link className="favoritos" to="/login">
             Meus Filmes
           </Link>

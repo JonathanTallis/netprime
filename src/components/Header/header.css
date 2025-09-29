@@ -41,6 +41,17 @@ header {
   margin-left: 20px;
 }
 
+.login-btn {
+  text-decoration: none;
+  color: #000;
+  background-color: #fdc91e;
+  margin-right: 20px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .logout-btn {
   text-decoration: none;
   color: #000;

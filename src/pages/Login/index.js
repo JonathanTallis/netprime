@@ -34,10 +34,6 @@ function Login() {
       );
 
       const user = userCredential.user;
-
-      //remover antes do deploy
-      console.log(user);
-
       setEmail("");
       setPassword("");
 

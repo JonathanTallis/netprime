@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { db } from "../../services/firebase/connection";
+import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { toast } from "react-toastify";
 import api from "../../services/api";
-
 import "./movie.css";
 
 function Movie() {
-  const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  const { signed, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,23 +41,40 @@ function Movie() {
     };
   }, [navigate, id]);
 
-  function saveMovie() {
-    const myList = localStorage.getItem("@netprime");
-
-    let savedMovies = JSON.parse(myList) || [];
-
-    const hasMovie = savedMovies.some(
-      (savedMovies) => savedMovies.id === movie.id
-    );
-
-    if (hasMovie) {
-      toast.warn("Esse filme já está na sua lista!");
+  async function saveMovie() {
+    if (!signed) {
+      toast.info("Faça login para salvar filmes!");
       return;
     }
 
-    savedMovies.push(movie);
-    localStorage.setItem("@netprime", JSON.stringify(savedMovies));
-    toast.success("Filme salvo com sucesso!");
+    try {
+      const userDocRef = doc(db, "users", user.uid);
+      const snapshot = await getDoc(userDocRef);
+
+      if (snapshot.exists()) {
+        const userData = snapshot.data();
+        const hasMovie = userData.favorites?.some(
+          (movies) => movies.id === movie.id
+        );
+
+        if (hasMovie) {
+          toast.info("Esse filme já está na sua lista!");
+          return;
+        }
+      }
+
+      await updateDoc(userDocRef, {
+        favorites: arrayUnion({
+          id: movie.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+        }),
+      });
+      toast.success("Filme salvo na sua lista!");
+    } catch (error) {
+      console.log("Erro ao salvar o filme:", error);
+      toast.error("Erro ao salvar o filme");
+    }
   }
 
   if (loading) {
