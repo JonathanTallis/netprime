@@ -1,24 +1,53 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import { db } from "../../services/firebase/connection";
+import { doc, getDoc, deleteDoc, updateDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./favorites.css";
 
 function Favorites() {
+  const { user } = useContext(AuthContext);
   const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const myList = localStorage.getItem("@netprime");
-    setMovie(JSON.parse(myList) || []);
-  }, []);
+    async function loadFavorites() {
+      if (user) {
+        const userDocRef = doc(db, "users", user.uid);
 
-  function deleteMovie(id) {
-    let movieFilter = movie.filter((item) => {
-      return item.id !== id;
-    });
+        try {
+          const snapshot = await getDoc(userDocRef);
 
-    setMovie(movieFilter);
-    localStorage.setItem("@netprime", JSON.stringify(movieFilter));
-    toast.success("Filme excluído com sucesso!");
+          if (snapshot.exists()) {
+            setMovie(snapshot.data().favorites || []);
+          }
+        } catch (error) {
+          console.log("Erro ao buscar favoritos:", error);
+          toast.error("Não foi possível carregar seus favoritos.");
+        } finally {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadFavorites();
+  }, [user]);
+
+  async function deleteMovie(id) {
+    try {
+      const userDocRef = doc(db, "users", user.uid);
+      const updatedFavorites = movie.filter((movie) => movie.id !== id);
+
+      await updateDoc(userDocRef, {
+        favorites: updatedFavorites,
+      });
+
+      setMovie(updatedFavorites);
+      toast.success("Filme removido com sucesso!");
+    } catch (error) {
+      console.log("Erro ao deletar documento:", error);
+    }
   }
 
   return (

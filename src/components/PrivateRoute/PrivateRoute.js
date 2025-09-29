@@ -6,7 +6,7 @@ function PrivateRoute({ children }) {
   const { signed, loadingAuth } = useContext(AuthContext);
 
   if (loadingAuth) {
-    return <div>Cerrgando...</div>;
+    return <div></div>;
   }
 
   if (!signed) {
