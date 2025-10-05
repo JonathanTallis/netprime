@@ -41,7 +41,7 @@
 .nowplaying-list a strong {
   margin: 0px 10px;
   font-size: 14px;
-  color: #000;
+  color: var(--black);
   min-height: 55px;
   display: flex;
   align-items: center;

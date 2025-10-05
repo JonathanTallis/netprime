@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
+import logo from "../../assets/images/logo.png";
 import "./header.css";
 
 function Header() {
@@ -12,9 +13,11 @@ function Header() {
 
   return (
     <header>
-      <Link className="logo" to="/netprime">
-        <img src="logo.png" alt="NetPrime" />
-      </Link>
+      <div className="netprime-logo">
+        <Link to="/netprime">
+          <img src={logo} alt="NetPrime Logo" className="header-logo-img" />
+        </Link>
+      </div>
 
       {signed ? (
         <div className="header-links">

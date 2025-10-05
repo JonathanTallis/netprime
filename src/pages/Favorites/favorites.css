@@ -41,7 +41,7 @@
 
 .my-movies div a {
   text-decoration: none;
-  color: #116feb;
+  color: var(--blue);
 }
 
 /*Responsividade - Mobile*/

@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --orange: #ff8c00;
+  --black: #000;
+  --white: #fff;
+  --blue: #116feb;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
