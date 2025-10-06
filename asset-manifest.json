@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/netprime/static/css/main.1c8ed2e1.css",
-    "main.js": "/netprime/static/js/main.19d4ed94.js",
+    "main.css": "/netprime/static/css/main.8c7cbb99.css",
+    "main.js": "/netprime/static/js/main.044ef671.js",
+    "static/media/logo.png": "/netprime/static/media/logo.d758c87d51a2396a06d6.png",
     "index.html": "/netprime/index.html",
-    "main.1c8ed2e1.css.map": "/netprime/static/css/main.1c8ed2e1.css.map",
-    "main.19d4ed94.js.map": "/netprime/static/js/main.19d4ed94.js.map"
+    "main.8c7cbb99.css.map": "/netprime/static/css/main.8c7cbb99.css.map",
+    "main.044ef671.js.map": "/netprime/static/js/main.044ef671.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c8ed2e1.css",
-    "static/js/main.19d4ed94.js"
+    "static/css/main.8c7cbb99.css",
+    "static/js/main.044ef671.js"
   ]
 }
