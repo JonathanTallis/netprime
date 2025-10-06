@@ -1,4 +1,4 @@
-# Projeto NetPrime 2.0 – Catálogo de Filmes com Contass de Usuário
+# Projeto NetPrime 2.0 – Catálogo de Filmes com Contas de Usuário
 
 Este projeto começou como uma aplicação prática dos conceitos de React.js (Versão 1.0) e foi estrategicamente evoluído para a Versão 2.0, uma aplicação web completa com um Backend as a Service (BaaS) da Firebase.
 
@@ -28,6 +28,7 @@ A nova versão transforma a experiência do usuário ao adicionar um sistema de 
 ## Funcionalidades
 
 **Versão 1.0 (Base do Curso):**
+
 - Listagem de filmes em cartaz
 - Visualização de detalhes de cada filme
 - Adicionar e remover filmes favoritos (armazenados no navegador/localStorage)
@@ -35,6 +36,7 @@ A nova versão transforma a experiência do usuário ao adicionar um sistema de 
 - Layout adaptado e responsivo com CSS
 
 **Melhorias e Novas Funcionalidades (Versão 2.0)**
+
 - **Sistema de Autenticação:** Implementação de cadastro, login e logout seguros utilizando Firebase Authentication.
 - **Perfil de Usuário:** O usuário agora se cadastra com um nome que é utilizado para personalizar a experiência.
 - **Favoritos na Nuvem:** A lista de filmes favoritos foi migrada para o Cloud Firestore, o banco de dados NoSQL do Firebase.
@@ -48,7 +50,7 @@ A nova versão transforma a experiência do usuário ao adicionar um sistema de 
 
 ## Preview
 
-![Preview do NetPrime](https://github.com/JonathanTallis/netprime/blob/main/public/preview.gif?raw=true)
+![Preview do NetPrime](public/preview-2.gif)
 
 ---
 
